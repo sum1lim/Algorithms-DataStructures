@@ -1,10 +1,13 @@
-def quickSort(arr, low, high):
+def quickSort(arr):
+    quickSortHelper(arr, 0, len(arr)-1)
+
+def quickSortHelper(arr, low, high):
     if(low < high):
         pivot =  partition(arr, low, high)
 
 
-        quickSort(arr, low, pivot-1)
-        quickSort(arr, pivot+1, high)
+        quickSortHelper(arr, low, pivot-1)
+        quickSortHelper(arr, pivot+1, high)
 
 
 def partition(arr, low, high):
@@ -32,7 +35,7 @@ def swap(arr, a, b):
 
 def main():
     arr = [12,234,274,20,1,111,2,34,9,29,199,109,5,203,123,401,568,73,193,122,33,120,40,81,6,221,32]
-    quickSort(arr, 0, len(arr)-1)
+    quickSort(arr)
     print(arr)
 
 
