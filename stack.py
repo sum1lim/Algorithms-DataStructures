@@ -4,6 +4,7 @@ class stack:
     def __init__(self, structure=[]):
         self.structure = structure
         self.stackPointer = -1
+        self.size = len(structure)
 
     def __str__(self):
         s = ""
@@ -19,12 +20,11 @@ class stack:
     def top(self):
         return self.structure[self.stackPointer]
 
-    def size(self):
-        return self.stackPointer + 1
-
     def push(self, o):
         self.stackPointer += 1
         self.structure.append(o)
+
+        self.size += 1
         return self.stackPointer
     
     def pop(self):
@@ -34,7 +34,51 @@ class stack:
         o = self.top()
         self.stackPointer -= 1
         self.structure.remove(o)
+
+        self.size -= 1
         return o
 
     def stackInit(self):
         self.structure = []
+        self.stackPointer = -1
+        self.size = 0
+
+
+def main():
+
+    S = stack()
+
+    S.push(1)
+    print(S)
+    S.push(2)
+    print(S)
+    S.push(3)
+    print(S)
+
+    print()
+    print(S.isEmpty())
+    print(S.top())
+    print(S.size)
+    print()
+
+    S.stackInit()
+
+    S.push(4)
+    print(S)
+    S.push(5)
+    print(S)
+    S.push(6)
+    print(S)
+
+    S.pop()
+    print(S)
+    S.pop()
+    print(S)
+    S.pop()
+    print(S)
+
+    print(S.isEmpty())
+
+
+if __name__ == "__main__":
+    main()

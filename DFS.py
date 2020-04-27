@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 
 
-from GraphADT import *
+from graphADT import *
 from stack import *
 from quickSort import *
 
 
-class DFSgraph(EdgeList):
+class DFSgraph(edgeList):
     def __init__(self, V=[], E=[]):
-        EdgeList.__init__(self, V, E)
+        edgeList.__init__(self, V, E)
 
     def DFSinit(self):
         for v in self.vertices:
