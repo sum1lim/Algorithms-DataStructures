@@ -4,8 +4,6 @@ def quickSort(arr):
 def quickSortHelper(arr, low, high):
     if(low < high):
         pivot =  partition(arr, low, high)
-
-
         quickSortHelper(arr, low, pivot-1)
         quickSortHelper(arr, pivot+1, high)
 
