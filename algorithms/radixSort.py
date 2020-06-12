@@ -14,11 +14,11 @@ def radixSort(arr):
             identifier = float(10**(i+1))
             k = int((((arr[0]/identifier)%1) * 10)//1)
             main_li[k].append(arr[0])
-            arr.remove(arr[0])
+            del(arr[0])
 
         for li in main_li:
             while len(li) != 0:
-                arr.append(li[0])
+                arr.append(li[-1])
                 del(li[0])
 
         i+=1
