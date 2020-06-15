@@ -2,7 +2,7 @@ from algorithms.utils import swap
 
 def bubbleSort(arr):
     i = 0
-    while i < len(arr):
+    while i < len(arr)-1:
         j = 0
         while j < len(arr)-i-1:
             if arr[j] > arr[j+1]:
